@@ -32,8 +32,8 @@ public class Player {
      если игра не была установлена, то надо выкидывать RuntimeException */
     public int play(Game game, int hours) {
         game.getStore().addPlayTime(name, hours);
-        if (playedTime.containsKey(game)) {
-            playedTime.put(game, playedTime.get(game));
+        if (hours <= 0) {
+            throw new RuntimeException("Время не может быть отрицательным");
         } else {
             playedTime.put(game, hours);
         }
