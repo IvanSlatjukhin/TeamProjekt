@@ -44,8 +44,11 @@ public class GameStore {
      * суммироваться с прошлым значением для этого игрока
      */
     public void addPlayTime(String playerName, int hours) {
+        if (hours <= 0) {
+            throw new RuntimeException("Отрицательное игровое время!");
+        }
         if (playedTime.containsKey(playerName)) {
-            playedTime.put(playerName, playedTime.get(playerName));
+            playedTime.put(playerName, playedTime.getOrDefault(playerName, hours) + hours);
         } else {
             playedTime.put(playerName, hours);
         }
