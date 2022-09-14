@@ -31,8 +31,9 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         Game game2 = new Game("Цивилизация", "Стратегия", store);
+        Game game3 = new Game("NFS", "Гонки", store);
 
-        assertFalse(store.containsGame(game2));
+        assertFalse(store.containsGame(game3));
     }
 
     @Test
@@ -130,10 +131,6 @@ public class GameStoreTest {
     public void shouldReturnZeroGetSumPlayedTime() {
 
         GameStore store = new GameStore();
-
-        store.addPlayTime("Ivan", 0);
-        store.addPlayTime("Sacha", 0);
-        store.addPlayTime("Maks", 0);
 
         int actual = store.getSumPlayedTime();
         int expected = 0;
