@@ -59,7 +59,7 @@ public class GameStoreTest {
         store.addPlayTime("Kirill", 0);
 
         String actual = store.getMostPlayer();
-        String expected = "Kirill";
+        String expected = "null";
         assertEquals(expected, actual);
     }
 
@@ -92,11 +92,11 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         store.addPlayTime("Kirill", 0);
-        store.addPlayTime("Kirill", 2);
+        store.addPlayTime("Sonya", 2);
 
 
         String actual = store.getMostPlayer();
-        String expected = "Kirill";
+        String expected = "Sonya";
         assertEquals(expected, actual);
     }
 
@@ -130,6 +130,10 @@ public class GameStoreTest {
     public void shouldReturnZeroGetSumPlayedTime() {
 
         GameStore store = new GameStore();
+
+        store.addPlayTime("Ivan", 0);
+        store.addPlayTime("Sacha", 0);
+        store.addPlayTime("Maks", 0);
 
         int actual = store.getSumPlayedTime();
         int expected = 0;
