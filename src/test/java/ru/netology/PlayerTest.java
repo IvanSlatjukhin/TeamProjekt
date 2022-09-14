@@ -51,7 +51,7 @@ public class PlayerTest {
         player.play(game, 10);
         player.play(game1, 10);
 
-        int expected = 0;
+        int expected = 10;
         int actual = player.sumGenre(game.getGenre());
         assertEquals(expected, actual);
     }
