@@ -59,7 +59,7 @@ public class GameStoreTest {
         store.addPlayTime("Kirill", 0);
 
         String actual = store.getMostPlayer();
-        String expected = "null";
+        String expected = "Kirill";
         assertEquals(expected, actual);
     }
 
