@@ -31,9 +31,8 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         Game game2 = new Game("Цивилизация", "Стратегия", store);
-        Game game3 = new Game("NFS", "Гонки", store);
 
-        assertFalse(store.containsGame(game3));
+        assertFalse(store.containsGame(game2));
     }
 
     @Test
@@ -93,11 +92,11 @@ public class GameStoreTest {
         GameStore store = new GameStore();
 
         store.addPlayTime("Kirill", 0);
-        store.addPlayTime("Sonya", 2);
+        store.addPlayTime("Kirill", 2);
 
 
         String actual = store.getMostPlayer();
-        String expected = "Sonya";
+        String expected = "Kirill";
         assertEquals(expected, actual);
     }
 
